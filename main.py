@@ -87,7 +87,7 @@ data_transforms = {
     ]),
 }
 
-data_dir = 'C:\\Users\\jinhu\\PycharmProjects\\PorscheClassifier\\resources\\images'
+data_dir = '/Users/Jins/Documents/Git Projects/PorscheClassifier/resources/images'  # Change for PC
 image_datasets = {x: datasets.ImageFolder(os.path.join(data_dir, x),
                                           data_transforms[x])
                   for x in ['train', 'val']}
@@ -278,7 +278,7 @@ model_ft = train_model(model_ft, criterion, optimizer_ft, exp_lr_scheduler,
 #
 
 visualize_model(model_ft)
-
+torch.save(model_ft.state_dict(), '/Users/Jins/Documents/Git Projects/PorscheClassifier/saves/porsche-classifier.pt')
 
 ######################################################################
 # ConvNet as fixed feature extractor
